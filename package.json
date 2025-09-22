@@ -1,12 +1,13 @@
 {
   "name": "project",
   "version": "1.0.0",
-  "description": "This project is abour beverage ordering",
+  "description": "This project is about beverage ordering",
   "license": "ISC",
   "author": "GADHAMSHETTI SAKETH",
   "type": "commonjs",
   "scripts": {
-    "start": "parcel index.html",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "dependencies": {
@@ -27,7 +28,7 @@
     "babel-jest": "^30.1.2",
     "jest": "^30.1.3",
     "jest-environment-jsdom": "^30.1.2",
-    "parcel": "^2.15.4",
+    "parcel": "^2.16.0",
     "util": "^0.12.5"
   }
 }
