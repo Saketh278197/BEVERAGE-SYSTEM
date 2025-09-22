@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "name": "Sparkling Cranberry Punch",
+    "starrated": "yes",
+    "description": "A refreshing blend of cranberry juice and soda with a citrus twist. Perfect for festive gatherings and summer afternoons."
+  },
+  {
+    "id": 2,
+    "name": "Iced Chocolate Delight",
+    "description": "Rich chocolate syrup mixed with chilled milk and ice. A creamy treat for chocolate lovers."
+  }
+]

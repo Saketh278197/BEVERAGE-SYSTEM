@@ -1,0 +1,12 @@
+.MenuParent{
+  display:  flex;
+  box-sizing: border-box;
+  width: 1100px;
+  justify-content: flex-start;
+  gap: 30px;
+  background-color: transparent;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  /* border: 1px solid white; */
+  padding: 35px;
+}

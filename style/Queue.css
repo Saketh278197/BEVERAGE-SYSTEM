@@ -1,0 +1,13 @@
+
+.QueueContainer{
+  min-width:  1090px;
+  display: inline-flex;
+  border: 1px solid white;
+  padding: 10px;
+  border: 1px solid white;
+}
+.queue{
+  border: 1px solid white;
+  margin-top: 70px;
+  padding: 20px;
+}
