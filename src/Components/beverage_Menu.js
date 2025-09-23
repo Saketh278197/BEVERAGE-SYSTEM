@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Description from "./Description";
 import "../style/beverage_Menu.css";
 import useBeverageMenu from "../CustomHooks/useBeverageMenu";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+
 const Menu = () => {
   const [selectedId, setSelectedId] = useState(null);
   const [menuData, setMenuData] = useState([]);
@@ -61,7 +63,9 @@ const Menu = () => {
             <div key={item.id}>
               <div className="MenuItem" onClick={() => handleClick(item.id)}>
                 <span>{item.name}</span>
-                <span>&#11167;</span>
+                <span>
+                  {selectedId === item.id ? <FaChevronUp /> : <FaChevronDown />}
+                </span>
               </div>
               {selectedId === item.id && <Description description={item} />}
             </div>

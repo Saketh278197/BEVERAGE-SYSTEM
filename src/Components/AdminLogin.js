@@ -34,6 +34,7 @@ const AdminLogin = () => {
       <label>Admin UserName</label>
       <input
         type="text"
+        data-testid="username-input"
         value={Admin_userName}
         onChange={(e) => setAdmin_UserName(e.target.value)}
       />
@@ -41,6 +42,7 @@ const AdminLogin = () => {
       <label>Password</label>
       <input
         type="password"
+        data-testid="password-input"
         value={Admin_Password}
         onChange={(e) => setAdmin_Password(e.target.value)}
       />

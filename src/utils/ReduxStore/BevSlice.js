@@ -40,6 +40,9 @@ export const beverageslice = createSlice({
     },
     resetQueue: (state) => {
       state.inTheQueue = [];
+      state.mixingQueue = [];
+      state.readyQueue = [];
+      state.collectedQueue = [];
     },
   },
 });
@@ -49,5 +52,5 @@ export const {
   moveToBeingMixQueue,
   moveToReadyQueue,
   moveToCollected,
-  resetQueue
+  resetQueue,
 } = beverageslice.actions;

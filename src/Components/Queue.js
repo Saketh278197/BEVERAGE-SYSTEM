@@ -7,6 +7,7 @@ import {
   moveToCollected,
 } from "../utils/ReduxStore/BevSlice";
 
+  export const Nothing = (_o) => {};
 const Queue = () => {
   const { inTheQueue, mixingQueue, readyQueue } = useSelector(
     (state) => state.Beverage
@@ -14,7 +15,7 @@ const Queue = () => {
 
   const dispatch = useDispatch();
   const isAdmin = localStorage.getItem("isAdmin") === "true";
-  const Nothing = () => {};
+ 
   return (
     <div className="queue">
       <center>

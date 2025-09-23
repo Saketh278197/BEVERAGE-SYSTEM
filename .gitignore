@@ -8,6 +8,10 @@ node_modules/
 dist/
 build/
 
+# .gitignore
+coverage/
+
+
 # Environment variables
 .env
 .env.local
