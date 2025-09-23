@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Components/Queue.js</title>
+    <title>Code coverage report for Components/AdminLogin.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">Components</a> Queue.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">Components</a> AdminLogin.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">43.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/10</span>
+                <span class='fraction'>7/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/8</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">43.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/10</span>
+                <span class='fraction'>7/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -121,27 +121,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -154,10 +153,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,65 +160,70 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useDispatch, useSelector } from "react-redux";
-import UserDetails from "./UserDetails";
-import "../style/Queue.css";
-import {
-  moveToBeingMixQueue,
-  moveToReadyQueue,
-  moveToCollected,
-} from "../utils/ReduxStore/BevSlice";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Components/AdminLogin.js
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginSuccess, loginFailed } from "../utils/ReduxStore/authSlice";
+import "../style/Admin_login.css";
 &nbsp;
-const Queue = () =&gt; {
-  const { inTheQueue, mixingQueue, readyQueue } = useSelector(
-    (state) =&gt; state.Beverage
-  );
-&nbsp;
+const AdminLogin = () =&gt; {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isAdmin = localStorage.getItem("isAdmin") === "true";
-  const Nothing = () =&gt; {};
-  return (
-    &lt;div className="queue"&gt;
-      &lt;center&gt;
-        &lt;h2&gt;BEVERAGE QUEUE&lt;/h2&gt;
-        {!isAdmin &amp;&amp; (
-          &lt;p className="note"&gt;
-            (You are viewing as a &lt;strong&gt;Customer&lt;/strong&gt;. Only Admin can
-            manage the queue.)
-          &lt;/p&gt;
-        )}
-      &lt;/center&gt;
+  const [Admin_userName, setAdmin_UserName] = useState("");
+  const [Admin_Password, setAdmin_Password] = useState("");
 &nbsp;
-      &lt;div className="QueueContainer"&gt;
-        &lt;UserDetails
-          title={"IN THE QUEUE"}
-          order={inTheQueue}
-          onClickCard={
-            isAdmin ? <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >(o</span>) =&gt; <span class="cstat-no" title="statement not covered" >dispatch(moveToBeingMixQueue(o)) </span></span>: Nothing
-          }
-        /&gt;
-        &lt;UserDetails
-          title={"BEING MIXED"}
-          order={mixingQueue}
-          onClickCard={isAdmin ? <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >(o</span>) =&gt; <span class="cstat-no" title="statement not covered" >dispatch(moveToReadyQueue(o)) </span></span>: Nothing}
-        /&gt;
-        &lt;UserDetails
-          title={"READY TO COLLECT"}
-          order={readyQueue}
-          onClickCard={isAdmin ? <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >(o</span>) =&gt; <span class="cstat-no" title="statement not covered" >dispatch(moveToCollected(o)) </span></span>: Nothing}
-        /&gt;
-      &lt;/div&gt;
+  const submit = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
+<span class="cstat-no" title="statement not covered" >    e.preventDefault();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (Admin_userName === "admin123" &amp;&amp; Admin_Password === "admin123") {</span>
+<span class="cstat-no" title="statement not covered" >      localStorage.setItem("isAdmin", "true");</span>
+<span class="cstat-no" title="statement not covered" >      dispatch(loginSuccess());</span>
+<span class="cstat-no" title="statement not covered" >      navigate("/queue");</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      dispatch(loginFailed());</span>
+<span class="cstat-no" title="statement not covered" >      alert("Please enter valid credentials");</span>
+    }
+  };
+&nbsp;
+  return (
+    &lt;div className="admin-container"&gt;
+      &lt;div className="Admin"&gt;Admin Login&lt;/div&gt;
+      &lt;label&gt;Admin UserName&lt;/label&gt;
+      &lt;input
+        type="text"
+        value={Admin_userName}
+        onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setAdmin_UserName(e.target.value)}</span>
+      /&gt;
+      &lt;br /&gt;
+      &lt;label&gt;Password&lt;/label&gt;
+      &lt;input
+        type="password"
+        value={Admin_Password}
+        onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setAdmin_Password(e.target.value)}</span>
+      /&gt;
+      &lt;br /&gt;
+      &lt;button onClick={submit} type="submit"&gt;
+        Login
+      &lt;/button&gt;
     &lt;/div&gt;
   );
 };
-export default Queue;</pre></td></tr></table></pre>
+&nbsp;
+export default AdminLogin;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-23T05:34:51.389Z
+                at 2025-09-23T05:41:48.207Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { Provider} from "react-redux";
+import { Provider } from "react-redux";
 import bevStore from "../../utils/ReduxStore/BevStore";
 import useBeverageMenu from "../../CustomHooks/useBeverageMenu";
 import {
@@ -77,10 +77,8 @@ test("Should userDetails move to another queue when click ", () => {
   fireEvent.click(cokecard);
 
   const state = bevStore.getState();
-expect(state.Beverage.mixingQueue.length).toBe(1);
-
+  expect(state.Beverage.mixingQueue.length).toBe(1);
 });
-
 
 test("Should userDetails move to mixing queue to readyqueue when click ", () => {
   const mock_Details = [
@@ -106,8 +104,7 @@ test("Should userDetails move to mixing queue to readyqueue when click ", () => 
   fireEvent.click(cokecard);
 
   const state = bevStore.getState();
-expect(state.Beverage.readyQueue.length).toBe(1);
-
+  expect(state.Beverage.readyQueue.length).toBe(1);
 });
 
 test("Should userDetails move to ready queue to collected when click ", () => {
@@ -134,7 +131,5 @@ test("Should userDetails move to ready queue to collected when click ", () => {
   fireEvent.click(cokecard);
 
   const state = bevStore.getState();
-expect(state.Beverage.collectedQueue.length).toBe(1);
-
+  expect(state.Beverage.collectedQueue.length).toBe(1);
 });
-

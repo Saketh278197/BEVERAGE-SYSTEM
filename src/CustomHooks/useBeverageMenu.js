@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import data from "../utils/Api";
-
 const useBeverageMenu = () => {
   const [menu, setMenu] = useState([]);
   useEffect(() => {

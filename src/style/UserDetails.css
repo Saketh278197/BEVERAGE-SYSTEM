@@ -42,3 +42,13 @@
   align-items: center;
   cursor: pointer;
 }
+.card.clickable {
+  cursor: pointer;
+  background-color: #d1ffd1;
+}
+
+.card.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+

@@ -14,7 +14,7 @@ const Menu = () => {
       setFilteredMenu(menu);
     }
   }, [menu]);
- 
+
   if (menu.length === 0) {
     return (
       <div

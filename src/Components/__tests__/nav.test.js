@@ -30,14 +30,14 @@ test("should load with Queue Link", () => {
   expect(QueueLink).toBeInTheDocument();
 });
 
-test("Should have 🍹BeverageApp", () => {
+test("Should have BeverageApp", () => {
   render(
     <BrowserRouter>
       <Provider store={bevStore}>
-        <Navbar/>
+        <Navbar />
       </Provider>
     </BrowserRouter>
   );
-  const heading = screen.getByRole("heading",{name:"🍹BeverageApp"});
+  const heading = screen.getByRole("heading", { name: "BeverageApp" });
   expect(heading).toBeInTheDocument();
 });
