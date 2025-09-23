@@ -1,4 +1,3 @@
-// App.js
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
@@ -10,7 +9,7 @@ import AdminLogin from "./AdminLogin";
 import ErrorPage from "./Error";
 import Navbar from "./NavBar";
 import BevStore from "../utils/ReduxStore/BevStore";
-import { logout } from "../utils/ReduxStore/authSlice";
+import { logout } from "../utils/ReduxStore/AuthSlice";
 import "../style/NavBar.css";
 import "../style/form.css";
 import "../style/Media.css";

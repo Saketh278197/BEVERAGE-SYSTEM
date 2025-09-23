@@ -2,5 +2,6 @@
   max-width: 230px;
   margin-left: 15px;
   text-align: justify;
+  font-weight: 500;
   transition: width 3s ease;
 }

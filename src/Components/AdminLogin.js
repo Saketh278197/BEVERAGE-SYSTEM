@@ -1,8 +1,7 @@
-// Components/AdminLogin.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { loginSuccess, loginFailed } from "../utils/ReduxStore/authSlice";
+import { loginSuccess, loginFailed } from "../utils/ReduxStore/AuthSlice";
 import "../style/Admin_login.css";
 
 const AdminLogin = () => {
@@ -26,7 +25,12 @@ const AdminLogin = () => {
 
   return (
     <div className="admin-container">
-      <div className="Admin">Admin Login</div>
+      <div className="Admin">
+        <img
+          className="AdminLogo"
+          src="https://i.ibb.co/JRWVXCDk/Adobe-Express-file.png"
+        ></img>
+      </div>
       <label>Admin UserName</label>
       <input
         type="text"

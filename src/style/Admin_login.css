@@ -1,11 +1,16 @@
 .admin-container {
-    margin-top: 40%;
+  margin-top: 40%;
   background-color: #2c3245;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   text-align: center;
   width: 320px;
+}
+.AdminLogo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
 
 .admin-container label {

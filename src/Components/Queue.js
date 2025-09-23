@@ -19,10 +19,9 @@ const Queue = () => {
     <div className="queue">
       <center>
         <h2>BEVERAGE QUEUE</h2>
-        {!isAdmin && (
+        {isAdmin && (
           <p className="note">
-            (You are viewing as a <strong>Customer</strong>. Only Admin can
-            manage the queue.)
+            <b>You are currently viewing as an admin</b>
           </p>
         )}
       </center>
