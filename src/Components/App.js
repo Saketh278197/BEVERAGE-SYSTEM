@@ -14,6 +14,8 @@ import "../style/NavBar.css";
 import "../style/form.css";
 import "../style/Media.css";
 
+
+
 function AppRoutes() {
   const location = useLocation();
   const dispatch = useDispatch();
