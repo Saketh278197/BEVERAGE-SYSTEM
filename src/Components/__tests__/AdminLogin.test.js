@@ -28,35 +28,35 @@ beforeEach(() => {
 });
 
 //test case 1
-test("renders the username and password labels", () => {
+test("Renders the username and password labels", () => {
   const input = screen.getByText("Admin UserName");
   const password = screen.getByText("Password");
   expect(input).toBeInTheDocument();
   expect(password).toBeInTheDocument();
 });
 
-test("renders the username and password input fields", () => {
+test("Renders the username and password input fields", () => {
   const input = screen.getByTestId("username-input");
   const password = screen.getByTestId("password-input");
   expect(input).toBeInTheDocument();
   expect(password).toBeInTheDocument();
 });
 
-test("renders the username and password input fields", () => {
+test("Renders the username and password input fields", () => {
   const input = screen.getByTestId("username-input");
   const password = screen.getByTestId("password-input");
   expect(input).toBeInTheDocument();
   expect(password).toBeInTheDocument();
 });
 
-test("renders the username and password input fields", () => {
+test("Renders the username and password input fields", () => {
   const input = screen.getByTestId("username-input");
   const password = screen.getByTestId("password-input");
   expect(input).toBeInTheDocument();
   expect(password).toBeInTheDocument();
 });
 
-test("logs in admin and navigates to BEVERAGE QUEUE page on valid credentials", async () => {
+test("Logs in admin and navigates to BEVERAGE QUEUE page on valid credentials", async () => {
   fireEvent.change(screen.getByTestId("username-input"), {
     target: { value: "admin123" },
   });
@@ -71,7 +71,7 @@ test("logs in admin and navigates to BEVERAGE QUEUE page on valid credentials", 
   });
 });
 
-test("shows alert and dispatches loginFailed on invalid credentials", () => {
+test("Shows alert and dispatches loginFailed on invalid credentials", () => {
   const alertMock = jest.spyOn(window, "alert").mockImplementation(() => {});
   const dispatchSpy = jest.spyOn(bevStore, "dispatch");
   fireEvent.change(screen.getByTestId("username-input"), {
@@ -87,7 +87,7 @@ test("shows alert and dispatches loginFailed on invalid credentials", () => {
   expect(dispatchSpy).toHaveBeenCalledWith(loginFailed());
 });
 
-test("dispatches loginSuccess to Redux store after successful admin login", () => {
+test("Dispatches loginSuccess to Redux store after successful admin login", () => {
   const dispatchSpy = jest.spyOn(bevStore, "dispatch");
   fireEvent.change(screen.getByTestId("username-input"), {
     target: { value: "admin123" },
