@@ -21,7 +21,7 @@ beforeEach(() => {
   bevStore.dispatch(resetQueue());
 });
 
-test("Should have the heading Beverage Queue in the Queue", () => {
+test("Renders all primary sections of the Queue component, including 'IN THE QUEUE', 'BEING MIXED', and 'READY TO COLLECT'", () => {
   render(
     <BrowserRouter>
       <Provider store={bevStore}>
@@ -40,7 +40,7 @@ test("Should have the heading Beverage Queue in the Queue", () => {
   expect(heading4).toBeInTheDocument();
 });
 
-test("Should NOT move user from inTheQueue to mixingQueue when clicked and not admin", () => {
+test("Does not allow moving a user to the Mixing Queue when the user is not an admin", () => {
   const mockUser = { id: 1, name: "saketh", Drink: "Coke" };
 
   localStorage.setItem("isAdmin", "false");
@@ -65,7 +65,7 @@ test("Should NOT move user from inTheQueue to mixingQueue when clicked and not a
   expect(state.Beverage.readyQueue.length).toBe(0);
 });
 
-test("Should  move user from inTheQueue to mixingQueue when clicked  admin", () => {
+test("Allows moving a user from the Queue to the Mixing Queue when clicked by an admin", () => {
   const mockUser = { id: 1, name: "saketh", Drink: "Coke" };
 
   localStorage.setItem("isAdmin", "true");
@@ -90,7 +90,7 @@ test("Should  move user from inTheQueue to mixingQueue when clicked  admin", () 
   expect(state.Beverage.readyQueue.length).toBe(0);
 });
 
-test("Should  move user from BeingMixed to Ready to collect when clicked  admin", () => {
+test("Allows moving a user from the Mixing Queue to the Ready Queue when clicked by an admin", () => {
   const mockUser = { id: 1, name: "saketh", Drink: "Coke" };
 
   localStorage.setItem("isAdmin", "true");
@@ -114,7 +114,8 @@ test("Should  move user from BeingMixed to Ready to collect when clicked  admin"
   expect(state.Beverage.mixingQueue.length).toBe(0);
   expect(state.Beverage.readyQueue.length).toBe(1);
 });
-test("Should  move user from ReadyQueue to Collected Queue when clicked  admin", () => {
+
+test("Allows moving a user from the Ready Queue to the Collected Queue when clicked by an admin", () => {
   const mockUser = { id: 1, name: "saketh", Drink: "Coke" };
 
   localStorage.setItem("isAdmin", "true");
@@ -140,7 +141,7 @@ test("Should  move user from ReadyQueue to Collected Queue when clicked  admin",
   expect(state.Beverage.collectedQueue.length).toBe(1);
 });
 
-test("Should show admin note when isAdmin is true", () => {
+test("Displays an admin notification when the user is viewing as an admin", () => {
   localStorage.setItem("isAdmin", "true");
 
   render(
@@ -153,7 +154,7 @@ test("Should show admin note when isAdmin is true", () => {
   expect(note).toBeInTheDocument();
 });
 
-test("Should NOT show admin note when isAdmin is false", () => {
+test("Does not display admin notification when the user is not an admin", () => {
   localStorage.setItem("isAdmin", "false");
 
   render(
@@ -166,7 +167,7 @@ test("Should NOT show admin note when isAdmin is false", () => {
   expect(note).not.toBeInTheDocument();
 });
 
-test("Should render Queue sections even when all queues are empty", () => {
+test("Renders all Queue sections even when there are no users in any queue", () => {
   localStorage.setItem("isAdmin", "true");
   bevStore.dispatch(resetQueue());
 
@@ -181,7 +182,7 @@ test("Should render Queue sections even when all queues are empty", () => {
   expect(screen.getByText("READY TO COLLECT")).toBeInTheDocument();
 });
 
-test("Should render multiple users in IN THE QUEUE section", () => {
+test("Displays multiple users correctly in the 'IN THE QUEUE' section", () => {
   const users = [
     { id: 1, name: "User A", Drink: "Coke" },
     { id: 2, name: "User B", Drink: "Pepsi" },
@@ -203,7 +204,7 @@ test("Should render multiple users in IN THE QUEUE section", () => {
   expect(screen.getByText("Pepsi")).toBeInTheDocument();
 });
 
-test("Should handle users with same name and drink", () => {
+test("Correctly renders multiple users with identical names and drinks without errors", () => {
   const duplicateUsers = [
     { id: 101, name: "Sam", Drink: "Latte" },
     { id: 102, name: "Sam", Drink: "Latte" },
