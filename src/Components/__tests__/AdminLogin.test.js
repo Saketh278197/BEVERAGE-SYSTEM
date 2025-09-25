@@ -1,7 +1,6 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import AdminLogin from "../AdminLogin";
-import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import bevStore from "../../utils/ReduxStore/BevStore";
 import Queue from "../Queue";
@@ -82,7 +81,6 @@ test("Should admin  login unable to login with wrong username and password  ", (
   });
 
   fireEvent.click(screen.getByRole("button", { name: "Login" }));
-
   expect(alertMock).toHaveBeenCalledWith("Please enter valid credentials");
   expect(dispatchSpy).toHaveBeenCalledWith(loginFailed());
 });
