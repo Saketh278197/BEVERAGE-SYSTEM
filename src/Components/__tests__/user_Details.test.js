@@ -20,7 +20,7 @@ beforeEach(() => {
   bevStore.dispatch(resetQueue());
 });
 
-test("Should userDetails loaded on the queue ", () => {
+test("Verifies that the UserDetails component is rendered when the Queue loads.", () => {
   useBeverageMenu.mockReturnValue([]);
   render(
     <Provider store={bevStore}>
@@ -35,7 +35,7 @@ test("Should userDetails loaded on the queue ", () => {
   expect(heading3).toBeInTheDocument();
 });
 
-test("should data displaying when component renders", () => {
+test("Confirms that user information is properly displayed upon component rendering.", () => {
   const mock_Details = [
     { id: 1, name: "saketh", Drink: "Coke" },
     { id: 2, name: "Gadhamshetti", Drink: "Tea" },
