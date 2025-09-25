@@ -28,34 +28,35 @@ beforeEach(() => {
 });
 
 //test case 1
-test("Should the heading component is render", () => {
+test("renders the username and password labels", () => {
   const input = screen.getByText("Admin UserName");
   const password = screen.getByText("Password");
   expect(input).toBeInTheDocument();
   expect(password).toBeInTheDocument();
 });
 
-test("Should the input and select box rendered in the document", () => {
+test("renders the username and password input fields", () => {
   const input = screen.getByTestId("username-input");
   const password = screen.getByTestId("password-input");
   expect(input).toBeInTheDocument();
   expect(password).toBeInTheDocument();
 });
 
-test("Should the input and select box rendered in the document", () => {
-  const input = screen.getByTestId("username-input");
-  const password = screen.getByTestId("password-input");
-  expect(input).toBeInTheDocument();
-  expect(password).toBeInTheDocument();
-});
-test("Should the input and password box rendered in the document", () => {
+test("renders the username and password input fields", () => {
   const input = screen.getByTestId("username-input");
   const password = screen.getByTestId("password-input");
   expect(input).toBeInTheDocument();
   expect(password).toBeInTheDocument();
 });
 
-test("Should admin  login form and navigate to BEVERAGE QUEUE pagec after login ", async () => {
+test("renders the username and password input fields", () => {
+  const input = screen.getByTestId("username-input");
+  const password = screen.getByTestId("password-input");
+  expect(input).toBeInTheDocument();
+  expect(password).toBeInTheDocument();
+});
+
+test("logs in admin and navigates to BEVERAGE QUEUE page on valid credentials", async () => {
   fireEvent.change(screen.getByTestId("username-input"), {
     target: { value: "admin123" },
   });
@@ -69,7 +70,8 @@ test("Should admin  login form and navigate to BEVERAGE QUEUE pagec after login 
     expect(screen.getByText("BEVERAGE QUEUE")).toBeInTheDocument();
   });
 });
-test("Should admin  login unable to login with wrong username and password  ", () => {
+
+test("shows alert and dispatches loginFailed on invalid credentials", () => {
   const alertMock = jest.spyOn(window, "alert").mockImplementation(() => {});
   const dispatchSpy = jest.spyOn(bevStore, "dispatch");
   fireEvent.change(screen.getByTestId("username-input"), {
@@ -85,7 +87,7 @@ test("Should admin  login unable to login with wrong username and password  ", (
   expect(dispatchSpy).toHaveBeenCalledWith(loginFailed());
 });
 
-test("Should redux store is updating after admin login ", () => {
+test("dispatches loginSuccess to Redux store after successful admin login", () => {
   const dispatchSpy = jest.spyOn(bevStore, "dispatch");
   fireEvent.change(screen.getByTestId("username-input"), {
     target: { value: "admin123" },
