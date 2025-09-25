@@ -14,7 +14,7 @@ beforeEach(() => {
   bevStore.dispatch(resetQueue());
 });
 
-test("should have heading in the form 'ORDER YOUR BEVERAGE'", () => {
+test("Verifies that the form contains the heading 'ORDER YOUR BEVERAGE'", () => {
   useBeverageMenu.mockReturnValue([]);
 
   render(
@@ -27,7 +27,7 @@ test("should have heading in the form 'ORDER YOUR BEVERAGE'", () => {
   expect(heading).toBeInTheDocument();
 });
 
-test("Should have label 'Name' in the form", () => {
+test("Confirms the presence of the Name label in the form.", () => {
   useBeverageMenu.mockReturnValue([]);
 
   render(
@@ -40,7 +40,7 @@ test("Should have label 'Name' in the form", () => {
   expect(label).toBeInTheDocument();
 });
 
-test("Should have label 'Beverage' in the form", () => {
+test("Confirms the presence of the Beverage label in the form.", () => {
   useBeverageMenu.mockReturnValue([]);
 
   render(
@@ -53,7 +53,7 @@ test("Should have label 'Beverage' in the form", () => {
   expect(label2).toBeInTheDocument();
 });
 
-test("Should the input box is there in the form", () => {
+test("Checks that the text input box is rendered in the form.", () => {
   useBeverageMenu.mockReturnValue([]);
 
   render(
@@ -66,7 +66,7 @@ test("Should the input box is there in the form", () => {
   expect(textbox).toBeInTheDocument();
 });
 
-test("Should the select Box be loaded in the page", () => {
+test("Checks that the dropdown select box is rendered in the form.", () => {
   useBeverageMenu.mockReturnValue([]);
 
   render(
@@ -79,7 +79,7 @@ test("Should the select Box be loaded in the page", () => {
   expect(selectBox).toBeInTheDocument();
 });
 
-test("Should popup load error message when submitting empty form", () => {
+test("Displays an error popup when the form is submitted with empty fields.", () => {
   useBeverageMenu.mockReturnValue([]);
 
   render(
@@ -97,7 +97,7 @@ test("Should popup load error message when submitting empty form", () => {
   expect(errorPopup).toBeInTheDocument();
 });
 
-test("Should show error if only beverage is selected", () => {
+test("Displays an error message if only the beverage is selected and the name is missing.", () => {
   useBeverageMenu.mockReturnValue(MenuMock);
 
   render(
@@ -118,7 +118,7 @@ test("Should show error if only beverage is selected", () => {
   expect(errorPopup).toBeInTheDocument();
 });
 
-test("Should only name entered", () => {
+test("Displays an error message if only the name is entered without selecting a beverage.", () => {
   useBeverageMenu.mockReturnValue(MenuMock);
 
   render(
@@ -137,7 +137,7 @@ test("Should only name entered", () => {
   expect(errorPopup).toBeInTheDocument();
 });
 
-test("Should successfully submit with valid inputs", () => {
+test("Confirms successful form submission when both name and beverage are provided.", () => {
   useBeverageMenu.mockReturnValue(MenuMock);
 
   render(
@@ -161,7 +161,7 @@ test("Should successfully submit with valid inputs", () => {
   expect(successPopup).toBeInTheDocument();
 });
 
-test("Should the data storing in Queue after submit", () => {
+test("Verifies that the submitted data is correctly added to the queue in the store.", () => {
   useBeverageMenu.mockReturnValue(MenuMock);
 
   render(
@@ -185,7 +185,7 @@ test("Should the data storing in Queue after submit", () => {
   expect(state.Beverage.inTheQueue.length).toBe(1);
 });
 
-test("Should clear form after successful submit", () => {
+test("Ensures the form fields are reset after a successful submission.", () => {
   useBeverageMenu.mockReturnValue(MenuMock);
 
   render(
@@ -208,8 +208,7 @@ test("Should clear form after successful submit", () => {
   expect(combobox.value).toBe("");
 });
 
-
-test("Success popup should disappear after 3 seconds", () => {
+test("Checks that the success popup message disappears automatically after 3 seconds.", () => {
   jest.useFakeTimers();
   useBeverageMenu.mockReturnValue(MenuMock);
 
@@ -243,8 +242,7 @@ test("Success popup should disappear after 3 seconds", () => {
   ).not.toBeInTheDocument();
 });
 
-
-test("Error message should disappear after 3 seconds when form is invalid", () => {
+test("Checks that the error message disappears automatically after 3 seconds when submission is invalid.", () => {
   jest.useFakeTimers();
   useBeverageMenu.mockReturnValue([]);
 
@@ -269,7 +267,7 @@ test("Error message should disappear after 3 seconds when form is invalid", () =
   ).not.toBeInTheDocument();
 });
 
-test("Should render options from beverage menu mock", () => {
+test("Confirms all beverage options from the mock menu are rendered in the select dropdown.", () => {
   useBeverageMenu.mockReturnValue(MenuMock);
 
   render(
@@ -283,7 +281,7 @@ test("Should render options from beverage menu mock", () => {
   });
 });
 
-test("Should allow multiple unique submissions", () => {
+test("Verifies the ability to submit multiple unique orders successfully.", () => {
   useBeverageMenu.mockReturnValue(MenuMock);
 
   render(
