@@ -16,29 +16,29 @@ describe("Navbar - Static Elements", () => {
     );
   });
 
-  test("Should load with Home link", () => {
+  test("Verifies that the Navbar renders the Home link on initial load.", () => {
     const HomeLink = screen.getByRole("link", { name: "Home" });
     expect(HomeLink).toBeInTheDocument();
   });
 
-  test("Should load with Queue link", () => {
+  test("Confirms that the Queue link is present in the Navbar.", () => {
     const QueueLink = screen.getByRole("link", { name: "Queue" });
     expect(QueueLink).toBeInTheDocument();
   });
 
-  test("Should load with Admin link", () => {
+  test("Ensures that the Admin link is displayed in the Navbar", () => {
     const AdminLink = screen.getByRole("link", { name: "Admin" });
     expect(AdminLink).toBeInTheDocument();
   });
 
-  test("Should render logo 'BeverageApp'", () => {
+  test("Checks that the Navbar correctly displays the BeverageApp logo.", () => {
     const heading = screen.getByRole("heading", { name: "BeverageApp" });
     expect(heading).toBeInTheDocument();
   });
 });
 
 describe("Navbar - Conditional Rendering of History Link", () => {
-  test("Should show 'History' link on /queue path", () => {
+  test("Confirms the History link is visible when the URL path is /queue.", () => {
     render(
       <MemoryRouter initialEntries={["/queue"]}>
         <Provider store={bevStore}>
@@ -50,7 +50,7 @@ describe("Navbar - Conditional Rendering of History Link", () => {
     expect(history).toBeInTheDocument();
   });
 
-  test("Should NOT show 'History' link on /admin path", () => {
+  test("Verifies that the History link is hidden when the URL path is /admin.", () => {
     render(
       <MemoryRouter initialEntries={["/admin"]}>
         <Provider store={bevStore}>
@@ -62,7 +62,7 @@ describe("Navbar - Conditional Rendering of History Link", () => {
     expect(history).not.toBeInTheDocument();
   });
 
-  test("Should NOT show 'History' link on root path", () => {
+  test("Ensures the History link is not displayed on the root (/) path.", () => {
     render(
       <MemoryRouter initialEntries={["/"]}>
         <Provider store={bevStore}>
