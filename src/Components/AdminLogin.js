@@ -16,7 +16,7 @@ const AdminLogin = () => {
     if (Admin_userName === "admin123" && Admin_Password === "admin123") {
       localStorage.setItem("isAdmin", "true");
       dispatch(loginSuccess());
-      navigate("/queue");
+       navigate("/queue" ,{replace:true});
     } else {
       dispatch(loginFailed());
       alert("Please enter valid credentials");
