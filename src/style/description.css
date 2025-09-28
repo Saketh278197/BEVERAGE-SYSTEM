@@ -1,7 +1,8 @@
-.description{
-  max-width: 230px;
+.description {
+  max-width: 400px;   
   margin-left: 15px;
-  text-align: justify;
+  text-align: left;   
   font-weight: 500;
+  line-height: 1.5;   
   transition: width 3s ease;
 }
