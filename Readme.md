@@ -2,7 +2,7 @@
  
 A web-based beverage ordering application with a queue management system — demonstrating customer order placement, queue tracking, and admin (mixologist) controls.
  
-🌐 **Live Demo:** https://your-live-demo-link.vercel.app/  
+🌐 **Live Demo:** https://beverage-system.vercel.app/
  
 ---
  
@@ -39,3 +39,4 @@ cd <your-project-folder>
 npm install
 # Run  
 npm run dev
+
