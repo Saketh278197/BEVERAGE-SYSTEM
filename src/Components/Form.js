@@ -4,6 +4,7 @@ import { addToInQueue } from "../utils/ReduxStore/BevSlice";
 import "../style/form.css";
 import useBeverageMenu from "../CustomHooks/useBeverageMenu";
 
+
 const Form = () => {
   const menu = useBeverageMenu();
   const [name, setName] = useState("");
