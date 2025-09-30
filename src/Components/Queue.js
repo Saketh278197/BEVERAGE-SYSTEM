@@ -7,15 +7,34 @@ import {
   moveToCollected,
 } from "../utils/ReduxStore/BevSlice";
 
-  export const Nothing = (_o) => {};
+const Nothing = () => {};
+
 const Queue = () => {
+  const dispatch = useDispatch();
   const { inTheQueue, mixingQueue, readyQueue } = useSelector(
     (state) => state.Beverage
   );
 
-  const dispatch = useDispatch();
   const isAdmin = localStorage.getItem("isAdmin") === "true";
- 
+
+  const queueStages = [
+    {
+      title: "IN THE QUEUE",
+      orders: inTheQueue,
+      action: moveToBeingMixQueue,
+    },
+    {
+      title: "BEING MIXED",
+      orders: mixingQueue,
+      action: moveToReadyQueue,
+    },
+    {
+      title: "READY TO COLLECT",
+      orders: readyQueue,
+      action: moveToCollected,
+    },
+  ];
+
   return (
     <div className="queue">
       <center>
@@ -28,25 +47,17 @@ const Queue = () => {
       </center>
 
       <div className="QueueContainer">
-        <UserDetails
-          title={"IN THE QUEUE"}
-          order={inTheQueue}
-          onClickCard={
-            isAdmin ? (o) => dispatch(moveToBeingMixQueue(o)) : Nothing
-          }
-        />
-        <UserDetails
-          title={"BEING MIXED"}
-          order={mixingQueue}
-          onClickCard={isAdmin ? (o) => dispatch(moveToReadyQueue(o)) : Nothing}
-        />
-        <UserDetails
-          title={"READY TO COLLECT"}
-          order={readyQueue}
-          onClickCard={isAdmin ? (o) => dispatch(moveToCollected(o)) : Nothing}
-        />
+        {queueStages.map(({ title, orders, action }) => (
+          <UserDetails
+            key={title}
+            title={title}
+            order={orders}
+            onClickCard={isAdmin ? (o) => dispatch(action(o)) : Nothing}
+          />
+        ))}
       </div>
     </div>
   );
 };
+
 export default Queue;
