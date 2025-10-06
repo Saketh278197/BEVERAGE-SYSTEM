@@ -50,6 +50,9 @@
     padding: 6px;
     font-size: 13px;
   }
+   .CollectedData{
+    padding: 50px;
+  }
   .QueueContainer {
     min-width: unset;
     width: 93.5%;
